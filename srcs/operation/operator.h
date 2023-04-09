@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   operator.h                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hqixeo <hqixeo@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/10 02:27:57 by hqixeo            #+#    #+#             */
+/*   Updated: 2023/04/10 02:27:57 by hqixeo           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef OPERATOR_H
 # define OPERATOR_H
 
@@ -22,7 +34,7 @@ void		operator_rrr(t_list **stack_a, t_list **stack_b);
 
 void		ps_operate(t_operator operator, t_list **stack_a, t_list **stack_b);
 void		ps_repeat(t_operator operator, t_list **stack_a, t_list **stack_b,
-			size_t repeat);
+				size_t repeat);
 
 t_operator	operator_getfunc(const char *name);
 const char	*operator_getname(t_operator operator);

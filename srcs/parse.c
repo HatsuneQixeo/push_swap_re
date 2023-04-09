@@ -1,6 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hqixeo <hqixeo@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/10 02:27:56 by hqixeo            #+#    #+#             */
+/*   Updated: 2023/04/10 02:27:56 by hqixeo           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-t_list	*ps_tokenize(char **argv)
+int	ft_lststr_allof(const t_list *lst, t_ftstris ft_stris)
+{
+	while (lst != NULL && ft_stris(lst->content))
+		lst = lst->next;
+	return (lst == NULL);
+}
+
+static t_list	*ps_tokenize(char **argv)
 {
 	t_list	*lst_arg;
 	char	**split;

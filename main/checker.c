@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hqixeo <hqixeo@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/10 02:27:55 by hqixeo            #+#    #+#             */
+/*   Updated: 2023/04/10 02:27:55 by hqixeo           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	ps_checker(t_list **stack_a, t_list **stack_b)
@@ -7,7 +19,6 @@ static int	ps_checker(t_list **stack_a, t_list **stack_b)
 
 	while (1)
 	{
-		// ps_log(*stack_a, *stack_b);
 		input = ft_prompt("");
 		if (input == NULL)
 			return (0);
@@ -40,11 +51,7 @@ int	main(int argc, char **argv)
 	else
 	{
 		ft_putendl_fd("OK", 1);
-		/* Forbidden */
-		system("leaks -q checker");
 		return (0);
 	}
-	/* Forbidden */
-	system("leaks -q checker");
 	return (1);
 }

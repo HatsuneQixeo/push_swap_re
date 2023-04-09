@@ -1,6 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ps_radix.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hqixeo <hqixeo@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/10 02:27:56 by hqixeo            #+#    #+#             */
+/*   Updated: 2023/04/10 02:27:56 by hqixeo           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
+/*
+	Changing the base doesn't quite help,
+	since there's realistically only one bucket
+
+	It only takes more time to divide the bucket,
+	and more time to push the bucket back
+*/
+#ifndef BUCKET_BASE
 # define BUCKET_BASE	2
+#endif
 
 void	radix(t_list **stack_a, t_list **stack_b, const size_t digit)
 {
@@ -13,7 +34,7 @@ void	radix(t_list **stack_a, t_list **stack_b, const size_t digit)
 		iteration = ft_lstsize(*stack_a);
 		while (iteration--)
 		{
-			if ((idxval_getindex((*stack_a)->content) / digit) % BUCKET_BASE == i)
+			if (idxval_getindex((*stack_a)->content) / digit % BUCKET_BASE == i)
 				ps_operate(operator_pb, stack_a, stack_b);
 			else
 				ps_operate(operator_ra, stack_a, stack_b);
@@ -26,7 +47,6 @@ void	ps_radix_sort(t_list **stack_a, t_list **stack_b)
 	size_t	digit;
 
 	digit = 1;
-	// radix(stack_a, stack_b, digit);
 	while (!(ft_lstis_sorted(*stack_a, idxval_cmp_index)))
 	{
 		radix(stack_a, stack_b, digit);
