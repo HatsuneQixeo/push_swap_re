@@ -12,12 +12,6 @@
 
 #include "operator.h"
 
-typedef struct operation
-{
-	const char	*name;
-	t_operator	operator;
-}			t_operation;
-
 void	ps_operate(t_operator operator, t_list **stack_a, t_list **stack_b)
 {
 	const char	*name = operator_getname(operator);
