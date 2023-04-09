@@ -23,7 +23,7 @@
 # define BUCKET_SIZE	2
 #endif
 
-void	radix(t_list **stack_a, t_list **stack_b, const size_t digit)
+void	radix_push_bucket(t_list **stack_a, t_list **stack_b, const size_t digit)
 {
 	size_t	i;
 	size_t	iteration;
@@ -49,7 +49,7 @@ void	ps_radix_sort(t_list **stack_a, t_list **stack_b)
 	digit = 1;
 	while (!(ft_lstis_sorted(*stack_a, idxval_cmp_index)))
 	{
-		radix(stack_a, stack_b, digit);
+		radix_push_bucket(stack_a, stack_b, digit);
 		digit *= BUCKET_SIZE;
 		ps_repeat(operator_pa, stack_a, stack_b, ft_lstsize(*stack_b));
 	}
