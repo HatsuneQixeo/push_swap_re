@@ -4,7 +4,7 @@ MAIN_DIR	:=	main
 
 CC			:=	gcc
 CXXFLAGS	:=	-Wall -Werror -Wextra
-CXXFLAGS	+=	-Wno-unused-parameter -Wno-unused-variable -Wno-unused-function
+# CXXFLAGS	+=	-Wno-unused-parameter -Wno-unused-variable -Wno-unused-function
 
 SRC_DIR		:=	srcs
 SRCS		:=	$(shell find ${SRC_DIR} -name "*.c")
@@ -86,4 +86,4 @@ logerr: ${NAME}
 .PHONY: all clean fclean re run log logerr bonus san
 
 norm:
-	norminette ${SRC_DIR} ${MAIN_DIR} ${HEADER}
+	norminette ${SRC_DIR} ${MAIN_DIR}
