@@ -23,7 +23,8 @@
 # define BUCKET_SIZE	2
 #endif
 
-void	radix_push_bucket(t_list **stack_a, t_list **stack_b, const size_t digit)
+static void	radix_push_bucket(t_list **stack_a, t_list **stack_b,
+			const size_t digit)
 {
 	size_t	i;
 	size_t	iteration;

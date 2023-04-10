@@ -12,7 +12,7 @@
 
 #include "idxval.h"
 
-void	logone(const t_list *stack)
+static void	logone(const t_list *stack)
 {
 	if (stack == NULL)
 		ft_dprintf(2, "OutofRange");

@@ -38,7 +38,6 @@ t_list	*ps_parse(char **argv)
 	t_list	*stack_a;
 	t_list	*lst_token;
 
-	stack_a = NULL;
 	lst_token = ps_tokenize(argv);
 	if (ft_lststr_allof(lst_token, stris_numeric))
 		stack_a = ft_lstmap(lst_token, idxval_new, idxval_del);

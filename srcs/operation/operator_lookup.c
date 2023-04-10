@@ -18,14 +18,14 @@ typedef struct operation
 	t_operator	operator;
 }			t_operation;
 
-static int	find_operatorname(unsigned int i, const void *arr, const void *op)
+static int	find_operatorfunc(unsigned int i, const void *arr, const void *op)
 {
 	const t_operation	*operations = arr;
 
 	return (operations[i].operator == op);
 }
 
-static int	find_operatorfunc(unsigned int i, const void *arr, const void *name)
+static int	find_operatorname(unsigned int i, const void *arr, const void *name)
 {
 	const t_operation	*operations = arr;
 
@@ -60,7 +60,7 @@ static const t_operation	*operator_find(t_ftfind ft_find, const void *ref)
 
 t_operator	operator_getfunc(const char *name)
 {
-	const t_operation	*operation = operator_find(find_operatorfunc, name);
+	const t_operation	*operation = operator_find(find_operatorname, name);
 
 	if (operation == NULL)
 		return (NULL);
@@ -70,7 +70,7 @@ t_operator	operator_getfunc(const char *name)
 
 const char	*operator_getname(t_operator operator)
 {
-	const t_operation	*op = operator_find(find_operatorname, operator);
+	const t_operation	*op = operator_find(find_operatorfunc, operator);
 
 	if (op == NULL)
 		return (NULL);
