@@ -9,7 +9,6 @@
 /*   Updated: 2023/04/10 02:27:56 by hqixeo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "idxval.h"
 
 static void	logone(const t_list *stack)

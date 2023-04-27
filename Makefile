@@ -4,7 +4,7 @@ MAIN_DIR	:=	main
 
 CC			:=	gcc
 CXXFLAGS	:=	-Wall -Werror -Wextra
-# CXXFLAGS	+=	-g3 -fsanitize=address
+# CXXFLAGS	+=	-g -fsanitize=address
 # CXXFLAGS	+=	-Wno-unused-parameter -Wno-unused-variable -Wno-unused-function
 
 SRC_DIR		:=	srcs

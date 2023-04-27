@@ -9,7 +9,6 @@
 /*   Updated: 2023/04/10 02:27:56 by hqixeo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 static void	operator_push(t_list **src, t_list **dst)

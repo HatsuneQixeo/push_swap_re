@@ -9,7 +9,6 @@
 /*   Updated: 2023/04/10 02:27:55 by hqixeo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "push_swap.h"
 
 static int	ps_checker(t_list **stack_a, t_list **stack_b)

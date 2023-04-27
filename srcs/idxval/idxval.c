@@ -9,17 +9,13 @@
 /*   Updated: 2023/04/10 02:27:55 by hqixeo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "idxval.h"
-#include <limits.h>
 
 void	*idxval_new(void *content)
 {
 	t_idxval	*new;
-	const long	value = ft_atol(content);
+	const int	value = ft_atoi(content);
 
-	if (!(INT_MIN <= value && value <= INT_MAX))
-		return (NULL);
 	new = malloc(sizeof(t_idxval));
 	if (new == NULL)
 		return (NULL);

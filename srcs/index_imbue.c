@@ -9,7 +9,6 @@
 /*   Updated: 2023/04/10 02:27:56 by hqixeo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "idxval.h"
 
 static int	has_duplicate(const t_list *lst, t_ftcmp cmp)

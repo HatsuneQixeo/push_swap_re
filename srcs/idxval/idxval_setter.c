@@ -9,7 +9,6 @@
 /*   Updated: 2023/04/10 02:27:56 by hqixeo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "idxval.h"
 
 void	idxval_setvalue(t_idxval *idxval, const int value)

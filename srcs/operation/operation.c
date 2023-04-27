@@ -9,7 +9,6 @@
 /*   Updated: 2023/04/10 02:27:56 by hqixeo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "operator.h"
 
 void	ps_operate(t_operator operator, t_list **stack_a, t_list **stack_b)
