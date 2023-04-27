@@ -19,6 +19,7 @@
 t_list	*ps_parse(char **argv);
 
 int		ft_lstis_sorted(const t_list *lst, t_ftcmp cmp);
+int		ft_lstallof(const t_list *lst, int (*ft_is)());
 
 int		ps_index_imbue(const t_list *lst);
 void	ps_log(const t_list *stack_a, const t_list *stack_b);

@@ -11,6 +11,17 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <errno.h>
+
+/* Well, now this is getting messy */
+/* 
+	Probably wasn't a good idea to let idxval_new
+	return null for out of range in the first place
+*/
+int	contentis_notnull(const void *content)
+{
+	return (content != NULL);
+}
 
 int	main(int argc, char **argv)
 {
@@ -23,10 +34,20 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	if (stack_a == NULL)
 		ft_putendl_fd("Error: Invalid input", 2);
+	else if (!ft_lstallof(stack_a, contentis_notnull))
+	{
+		if (errno == ENOMEM)
+			ft_putendl_fd("Error: Out of memory", 2);
+		else
+			ft_putendl_fd("Error: Invalid value", 2);
+	}
 	else if (ps_index_imbue(stack_a) == -1)
 		ft_putendl_fd("Error: Duplicate values", 2);
-	else if (ft_lstis_sorted(stack_a, idxval_cmp_index))
+	else
+	{
+		if (!ft_lstis_sorted(stack_a, idxval_cmp_index))
+			ps_radix_sort(&stack_a, &stack_b);
 		return (0);
-	ps_radix_sort(&stack_a, &stack_b);
-	return (0);
+	}
+	return (1);
 }

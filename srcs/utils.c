@@ -20,3 +20,10 @@ int	ft_lstis_sorted(const t_list *lst, t_ftcmp cmp)
 		lst = lst->next;
 	return (lst->next == NULL);
 }
+
+int	ft_lstallof(const t_list *lst, int (*ft_is)())
+{
+	while (lst != NULL && ft_is(lst->content))
+		lst = lst->next;
+	return (lst == NULL);
+}

@@ -4,6 +4,7 @@ MAIN_DIR	:=	main
 
 CC			:=	gcc
 CXXFLAGS	:=	-Wall -Werror -Wextra
+# CXXFLAGS	+=	-g3 -fsanitize=address
 # CXXFLAGS	+=	-Wno-unused-parameter -Wno-unused-variable -Wno-unused-function
 
 SRC_DIR		:=	srcs
@@ -58,10 +59,6 @@ ${BONUS}: ${OBJS} ${OBJ_DIR}/${MAIN_DIR}/checker.o
 	@printf "${LIGHT_CYAN}${CC} ${CXXFLAGS} $^ -o $@${RESET}\n"
 	@${CC} ${CXXFLAGS} $^ ${LIBFT} -o $@
 
-san: 
-	@printf "${LIGHT_CYAN}SANITIZER: ON${RESET}\n"
-	@${CC} ${CXXFLAGS} -fsanitize=address -g ${CFLAGS} ${LIBFT} ${SRCS} ${MAIN_DIR}/checker.c -o ${BONUS}
-
 clean:
 	${LIBFT_MAKE} clean
 	@printf "${RED}${RM} ${OBJ_DIR}${RESET}\n"
@@ -76,6 +73,10 @@ re:	fclean all
 
 run: ${NAME}
 	./$<
+
+thisre:
+	${RM} ${NAME} ${OBJ_DIR}
+	${MAKE} ${NAME}
 
 log: ${NAME}
 	./$< > log.log

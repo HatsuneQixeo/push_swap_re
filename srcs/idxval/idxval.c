@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "idxval.h"
+#include <limits.h>
 
 void	*idxval_new(void *content)
 {

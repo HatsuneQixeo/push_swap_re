@@ -52,7 +52,7 @@ static const t_operation	*operator_find(t_ftfind ft_find, const void *ref)
 
 	length = (sizeof(operations) / sizeof(operations[0]));
 	find = ft_arrfind(operations, length, ft_find, ref);
-	if (find == SIZE_T_MAX)
+	if (find == SIZE_MAX)
 		return (NULL);
 	else
 		return (&operations[find]);

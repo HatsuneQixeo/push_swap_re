@@ -12,13 +12,6 @@
 
 #include "push_swap.h"
 
-int	ft_lststr_allof(const t_list *lst, t_ftstris ft_stris)
-{
-	while (lst != NULL && ft_stris(lst->content))
-		lst = lst->next;
-	return (lst == NULL);
-}
-
 static t_list	*ps_tokenize(char **argv)
 {
 	t_list	*lst_arg;
@@ -39,7 +32,7 @@ t_list	*ps_parse(char **argv)
 	t_list	*lst_token;
 
 	lst_token = ps_tokenize(argv);
-	if (ft_lststr_allof(lst_token, stris_numeric))
+	if (ft_lstallof(lst_token, stris_numeric))
 		stack_a = ft_lstmap(lst_token, idxval_new, idxval_del);
 	else
 		stack_a = NULL;
